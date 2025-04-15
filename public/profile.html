@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil - Collab Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Profil</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#" id="logoutLink">Odjava</a>
+    </nav>
+  </header>
+  <main>
+    <div class="form-container" id="profileInfo">
+    </div>
+  </main>
+  <script>
+    fetch('/api/user')
+      .then(res => res.json())
+      .then(data => {
+        const profileDiv = document.getElementById('profileInfo');
+        if(data.loggedIn){
+          profileDiv.innerHTML = `<h2>Korisničko ime: ${data.user.username}</h2>`;
+        } else {
+          profileDiv.innerHTML = `<p>Niste prijavljeni.</p>`;
+        }
+      });
+  </script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

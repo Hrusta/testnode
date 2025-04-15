@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat - Collab Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Chat Projekta</h1>
+    <nav>
+      <a href="project.html">Nazad na Projekt</a>
+    </nav>
+  </header>
+  <main>
+    <div id="chatBox" class="chat-box"></div>
+    <form id="chatForm">
+      <input type="text" id="chatMsg" placeholder="Upiši poruku" required>
+      <button type="submit">Pošalji</button>
+    </form>
+  </main>
+  <script src="js/chat.js"></script>
+</body>
+</html>
